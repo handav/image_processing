@@ -1,6 +1,5 @@
 import cv2
 import os
-import numpy as np
 
 path_to_images = './windows'
 ideal_larger_size = 800
@@ -28,6 +27,7 @@ for image_name in os.listdir(path_to_images):
         image = resize_image(image)
         gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
         edges = cv2.Canny(gray, 50, 150, apertureSize=3)
-        # cv2.imshow('edges', image)
+        save_new_image(image, image_name)
+        # cv2.imshow('edges', edges)
         # cv2.waitKey(0)
 
